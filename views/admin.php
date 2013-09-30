@@ -20,7 +20,7 @@
             <li>A descriptive name for your Wordpress site;</li>
             <li>The web URL which vistors enter to see Wordpress site; <br>
             <li>Your <strong>Callback URL</strong> as shown below;</li>
-            <li>Your <strong>Secret</strong> as shown below (You MUST keep this secure. Do not share it with 3rd parties.);</li>
+            <li>Your <strong>Secret</strong> which you can click below to generate or provide your own secure value for. You MUST keep this secure. Do not share it with 3rd parties.;</li>
           </ol>
     <p>Finally decide if your Wordpress site will be used in a production or test capacity and do the online registration</p>
     <p><center><strong><a href="https://rapid.aaf.edu.au/registration">Register for Production</a></strong> | <a href="https://rapid.test.aaf.edu.au/registration">Register for Test</a></center></p>
@@ -48,6 +48,7 @@
   function rapid_connect_secret_markup() {
     $options = get_option('rapid_connect_options');
     echo "<input id='secret' name='rapid_connect_options[secret]' size='60' type='text' value='{$options['secret']}' />";
+    echo ' <input class="button button-primary" name="Submit" type="submit" value="Generate" />';
   }
 ?>
 
@@ -64,7 +65,7 @@
 
   <?php if( isset($_GET['settings-updated']) ) { ?>
     <div id="message" class="updated">
-        <p><strong><?php _e('Settings saved.') ?></strong></p>
+        <p><strong><?php _e('Settings updated.') ?></strong></p>
     </div>
   <?php } ?>
 
