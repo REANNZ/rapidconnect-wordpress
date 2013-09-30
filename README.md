@@ -26,7 +26,7 @@ This plugin further eases usage of Rapid Connect by integrating it with Wordpres
 
 1. Download the latest release of the [AAF Rapid Connect Wordpress plugin](https://github.com/ausaccessfed/rapidconnect-wordpress/releases)
 
-1. Extract the tar.gz file to your `/wp-content/plugins/` directory
+1. Extract the tar.gz or zip file you downloaded to your `$WORDPRESS/wp-content/plugins/` directory
 1. Activate the AAF Rapid Connect plugin through the 'Plugins' menu in WordPress
 1. Click on the AAF Rapid Connect plugin 'Settings' link and follow the onscreen instructions
 
