@@ -20,7 +20,7 @@ use JWT\Authentication\JWT;
  */
 class Rapid_Connect {
 
-	const VERSION = '0.0.1';
+	const VERSION = '0.0.2';
 	protected $plugin_slug               = 'aaf-rapid-connect';
 	protected static $instance           = null;
 	protected $plugin_screen_hook_suffix = null;
@@ -28,7 +28,7 @@ class Rapid_Connect {
 	/**
 	 * Initialize the plugin by setting localization, filters, and administration functions.
 	 *
-	 * @since     0.0.1
+	 * @since     0.0.2
 	 */
 	private function __construct() {
 
@@ -64,7 +64,7 @@ class Rapid_Connect {
 	/**
 	 * Return an instance of this class.
 	 *
-	 * @since     0.0.1
+	 * @since     0.0.2
 	 *
 	 * @return    object    A single instance of this class.
 	 */
@@ -81,7 +81,7 @@ class Rapid_Connect {
 	/**
 	 * Fired when the plugin is activated.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 *
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
 	 */
@@ -107,7 +107,7 @@ class Rapid_Connect {
 	/**
 	 * Fired when the plugin is deactivated.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 *
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Deactivate" action, false if WPMU is disabled or plugin is deactivated on an individual blog.
 	 */
@@ -133,7 +133,7 @@ class Rapid_Connect {
 	/**
 	 * Fired when a new site is activated with a WPMU environment.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 *
 	 * @param	int	$blog_id ID of the new blog.
 	 */
@@ -152,7 +152,7 @@ class Rapid_Connect {
 	 * - not spam
 	 * - not deleted
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 *
 	 * @return	array|false	The blog ids, false if no matches.
 	 */
@@ -169,7 +169,7 @@ class Rapid_Connect {
 	/**
 	 * Fired for each blog when the plugin is activated.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	private static function single_activate() {
 	}
@@ -177,7 +177,7 @@ class Rapid_Connect {
 	/**
 	 * Fired for each blog when the plugin is deactivated.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	private static function single_deactivate() {
 	}
@@ -185,7 +185,7 @@ class Rapid_Connect {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	public function load_plugin_textdomain() {
 
@@ -199,7 +199,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
-	 * @since     0.0.1
+	 * @since     0.0.2
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -219,7 +219,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since     0.0.1
+	 * @since     0.0.2
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -239,7 +239,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueue public-facing style sheet.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), self::VERSION );
@@ -248,7 +248,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueues public-facing JavaScript files.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
@@ -257,7 +257,7 @@ class Rapid_Connect {
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	public function add_plugin_admin_menu() {
 
@@ -274,7 +274,7 @@ class Rapid_Connect {
 	/**
 	 * Render the settings page for this plugin.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
@@ -283,7 +283,7 @@ class Rapid_Connect {
 	/**
 	 * Add settings action link to the plugins page.
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	public function add_action_links( $links ) {
 
@@ -323,7 +323,7 @@ class Rapid_Connect {
 	 *        WordPress Actions: http://codex.wordpress.org/Plugin_API#Actions
 	 *        Action Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
   public function login_rapid_connect() {
     $options = get_option('rapid_connect_options');
@@ -348,7 +348,7 @@ class Rapid_Connect {
 	 *        WordPress Filters: http://codex.wordpress.org/Plugin_API#Filters
 	 *        Filter Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
 	 *
-	 * @since    0.0.1
+	 * @since    0.0.2
 	 */
 	public function rapid_connect_authenticate($user, $username, $password) {
     $jws = $_POST['assertion'];
