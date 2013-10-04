@@ -37,6 +37,12 @@
   ';
 } ?>
 
+<?php function rapid_connect_options_section_text() {
+  echo '
+    <p>The Rapid Connect plugin for Wordpress provides the following additional options for customising your install:</p>
+  ';
+} ?>
+
 <?php
   function rapid_connect_callback_markup() {
     $options = get_option('rapid_connect_options');
@@ -48,7 +54,19 @@
   function rapid_connect_secret_markup() {
     $options = get_option('rapid_connect_options');
     echo "<input id='secret' name='rapid_connect_options[secret]' size='60' type='text' value='{$options['secret']}' />";
-    echo ' <input class="button button-primary" name="Submit" type="submit" value="Generate" />';
+    echo '<input class="button button-primary" name="Submit" type="submit" value="Generate" />';
+  }
+?>
+
+<?php
+  function rapid_connect_trusted_affiliations_markup() {
+    $options = get_option('rapid_connect_options');
+    $trusted_affiliations_string = implode(' ', $options['trusted_affiliations']);
+    echo "
+      <p>Administrators of this Wordpress site may wish to further limit access to only a specific subset of AAF enabled identities. You can achieve this by entering a <strong>space seperated</strong> list of eduPersonScopedAffiliation values below.</p>
+      <p>To gain access to your Wordpress site users logging in from the AAF must have at least one of the values you specify associated with their account.</p>
+      <input id='url' name='rapid_connect_options[trusted_affiliations]' size='60' type='text' value='{$trusted_affiliations_string}' />
+    ";
   }
 ?>
 
