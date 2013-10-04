@@ -11,7 +11,7 @@
  * Plugin Name: AAF Rapid Connect
  * Plugin URI:  http://rapid.aaf.edu.au
  * Description: Allows subscribers of the Australian Access Federation to rapidly create collaborative Wordpress sites.
- * Version:     0.0.2
+ * Version:     0.1.0
  * Author:      Bradley Beddoes
  * Author URI:  http://www.bradleybeddoes.com
  * Text Domain: rapid-connect-en
