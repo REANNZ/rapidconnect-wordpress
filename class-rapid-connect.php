@@ -20,7 +20,7 @@ use JWT\Authentication\JWT;
  */
 class Rapid_Connect {
 
-	const VERSION = '0.0.2';
+	const VERSION = '0.1.0';
 	protected $plugin_slug               = 'aaf-rapid-connect';
 	protected static $instance           = null;
 	protected $plugin_screen_hook_suffix = null;
@@ -28,7 +28,7 @@ class Rapid_Connect {
 	/**
 	 * Initialize the plugin by setting localization, filters, and administration functions.
 	 *
-	 * @since     0.0.2
+	 * @since     0.1.0
 	 */
 	private function __construct() {
 
@@ -64,7 +64,7 @@ class Rapid_Connect {
 	/**
 	 * Return an instance of this class.
 	 *
-	 * @since     0.0.2
+	 * @since     0.1.0
 	 *
 	 * @return    object    A single instance of this class.
 	 */
@@ -81,7 +81,7 @@ class Rapid_Connect {
 	/**
 	 * Fired when the plugin is activated.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 *
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
 	 */
@@ -107,7 +107,7 @@ class Rapid_Connect {
 	/**
 	 * Fired when the plugin is deactivated.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 *
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Deactivate" action, false if WPMU is disabled or plugin is deactivated on an individual blog.
 	 */
@@ -133,7 +133,7 @@ class Rapid_Connect {
 	/**
 	 * Fired when a new site is activated with a WPMU environment.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 *
 	 * @param	int	$blog_id ID of the new blog.
 	 */
@@ -152,7 +152,7 @@ class Rapid_Connect {
 	 * - not spam
 	 * - not deleted
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 *
 	 * @return	array|false	The blog ids, false if no matches.
 	 */
@@ -169,7 +169,7 @@ class Rapid_Connect {
 	/**
 	 * Fired for each blog when the plugin is activated.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	private static function single_activate() {
 	}
@@ -177,7 +177,7 @@ class Rapid_Connect {
 	/**
 	 * Fired for each blog when the plugin is deactivated.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	private static function single_deactivate() {
 	}
@@ -185,7 +185,7 @@ class Rapid_Connect {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	public function load_plugin_textdomain() {
 
@@ -199,7 +199,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
-	 * @since     0.0.2
+	 * @since     0.1.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -219,7 +219,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since     0.0.2
+	 * @since     0.1.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -239,7 +239,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueue public-facing style sheet.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), self::VERSION );
@@ -248,7 +248,7 @@ class Rapid_Connect {
 	/**
 	 * Register and enqueues public-facing JavaScript files.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
@@ -257,7 +257,7 @@ class Rapid_Connect {
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	public function add_plugin_admin_menu() {
 
@@ -274,7 +274,7 @@ class Rapid_Connect {
 	/**
 	 * Render the settings page for this plugin.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
@@ -283,7 +283,7 @@ class Rapid_Connect {
 	/**
 	 * Add settings action link to the plugins page.
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	public function add_action_links( $links ) {
 
@@ -300,10 +300,12 @@ class Rapid_Connect {
     register_setting( 'rapid_connect_options', 'rapid_connect_options', array( $this, 'rapid_connect_options_validate') );
     add_settings_section('rapid_connect_main', 'Registration', 'rapid_connect_main_section_text', 'rapid_connect');
     add_settings_section('rapid_connect_url', 'Security', 'rapid_connect_url_section_text', 'rapid_connect');
+    add_settings_section('rapid_connect_options', 'Options', 'rapid_connect_options_section_text', 'rapid_connect');
 
     add_settings_field('callback', 'Callback URL', 'rapid_connect_callback_markup', 'rapid_connect', 'rapid_connect_main');
     add_settings_field('secret', 'Secret', 'rapid_connect_secret_markup', 'rapid_connect', 'rapid_connect_main');
     add_settings_field('url', 'Rapid Connect URL', 'rapid_connect_url_markup', 'rapid_connect', 'rapid_connect_url');
+    add_settings_field('trusted_affiliations', 'Trusted Affiliations', 'rapid_connect_trusted_affiliations_markup', 'rapid_connect', 'rapid_connect_options');
   }
 
   public function rapid_connect_options_validate($input) {
@@ -316,6 +318,12 @@ class Rapid_Connect {
     }
     $options['url'] = trim($input['url']);
 
+    if($input['trusted_affiliations']) {
+      $options['trusted_affiliations'] = explode(" ", $input['trusted_affiliations']);
+    } else {
+      $options['trusted_affiliations'] = null;
+    }
+
     return $options;
   }
 
@@ -323,22 +331,24 @@ class Rapid_Connect {
 	 *        WordPress Actions: http://codex.wordpress.org/Plugin_API#Actions
 	 *        Action Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
   public function login_rapid_connect() {
     $options = get_option('rapid_connect_options');
     $url = $options['url'];
 
     $default_login_markup=ob_get_clean();
+
     $rapid_login_markup='<div class="rapidlogin">
-    <h2>Login with the AAF</h2>
-    <br>
-    <p>If your Organisation is a <a href="http://www.aaf.edu.au/subscribe/subscribers/">subscriber to the Australian Access Federation</a> you can seemlessly access this site.</p>
-    <br>
-    <p>Click on the Australian Access Federation button below and follow the directions provided to get started.</p>
-    <br><center><a href="'.$url.'"><img title="Login with the Australian Access Federation" src="https://rapid.aaf.edu.au/aaf_service_223x54.png"/></a></center>
-    </div>
-    <br><br><h2>Login with a local account</h2><br>';
+      <h2>Login with the AAF</h2>
+      <br>
+      <p>If your Organisation is a <a href="http://www.aaf.edu.au/subscribe/subscribers/">subscriber to the Australian Access Federation</a> you can seemlessly access this site.</p>
+      <br>
+      <p>Click on the Australian Access Federation button below and follow the directions provided to get started.</p>
+      <br><center><a href="'.$url.'"><img title="Login with the Australian Access Federation" src="https://rapid.aaf.edu.au/aaf_service_223x54.png"/></a></center>
+      </div>';
+
+    $rapid_login_markup = $rapid_login_markup.'<br><br><h2>Login with a local account</h2><br>';
     $login_markup=str_replace('<form', $rapid_login_markup.'<form', $default_login_markup);
 
     echo $login_markup;
@@ -348,7 +358,7 @@ class Rapid_Connect {
 	 *        WordPress Filters: http://codex.wordpress.org/Plugin_API#Filters
 	 *        Filter Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
 	 *
-	 * @since    0.0.2
+	 * @since    0.1.0
 	 */
 	public function rapid_connect_authenticate($user, $username, $password) {
     $jws = $_POST['assertion'];
@@ -365,6 +375,17 @@ class Rapid_Connect {
       }
 
       $attr = $jwt->{'https://aaf.edu.au/attributes'};
+
+      $trusted_affiliations = $options['trusted_affiliations'];
+      if($trusted_affiliations) {
+        $affiliations = explode(";", $attr->edupersonscopedaffiliation);
+
+        if (count(array_intersect($trusted_affiliations, $affiliations)) < 1) {
+          return new WP_Error('rapid_connect_access_control', __('<strong>Error</strong>: This account is not permitted access via the AAF due to local policy.'));
+        }
+      }
+
+
       $user_login = sha1($attr->edupersontargetedid);
       $user = new WP_User($user_login);
 
@@ -373,7 +394,7 @@ class Rapid_Connect {
       } else {
         // Ensure this user is managed by Rapid Connect
         if ( !get_usermeta($user->ID, 'rapid_connect') ) {
-          return new WP_Error('rapid_connect_invalid_login', __('<strong>Error</strong>: This account is not accessed via the AAF'));
+          return new WP_Error('rapid_connect_invalid_login', __('<strong>Error</strong>: This account is not accessed via the AAF.'));
         }
 
         // Ensure personal information is current with source IdP
