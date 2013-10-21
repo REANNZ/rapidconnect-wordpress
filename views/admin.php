@@ -60,8 +60,12 @@
 
 <?php
   function rapid_connect_trusted_affiliations_markup() {
+    $trusted_affiliations_string = '';
+
     $options = get_option('rapid_connect_options');
-    $trusted_affiliations_string = implode(' ', $options['trusted_affiliations']);
+    if($options['trusted_affiliations'])
+      $trusted_affiliations_string = implode(' ', $options['trusted_affiliations']);
+
     echo "
       <p>Administrators of this Wordpress site may wish to further limit access to only a specific subset of AAF enabled identities. You can achieve this by entering a <strong>space seperated</strong> list of eduPersonScopedAffiliation values below.</p>
       <p>To gain access to your Wordpress site users logging in from the AAF must have at least one of the values you specify associated with their account.</p>
