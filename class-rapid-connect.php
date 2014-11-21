@@ -262,7 +262,7 @@ class Rapid_Connect {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_plugins_page(
-			__( 'AAF Rapid Connect', $this->plugin_slug ),
+			__( 'Tuakiri Rapid Connect', $this->plugin_slug ),
 			__( 'Menu', $this->plugin_slug ),
 			'manage_options',
 			$this->plugin_slug,
@@ -340,12 +340,12 @@ class Rapid_Connect {
     $default_login_markup=ob_get_clean();
 
     $rapid_login_markup='<div class="rapidlogin">
-      <h2>Login with the AAF</h2>
+      <h2>Login with Tuakiri</h2>
       <br>
-      <p>If your Organisation is a <a href="http://www.aaf.edu.au/subscribe/subscribers/">subscriber to the Australian Access Federation</a> you can seemlessly access this site.</p>
+      <p>If your Organisation is a <a href="https://tuakiri.ac.nz/confluence/display/Tuakiri/Subscriber+List">subscriber to Tuakiri</a> you can seamlessly access this site.</p>
       <br>
-      <p>Click on the Australian Access Federation button below and follow the directions provided to get started.</p>
-      <br><center><a href="'.$url.'"><img title="Login with the Australian Access Federation" src="https://rapid.aaf.edu.au/aaf_service_223x54.png"/></a></center>
+      <p>Click on the Tuakiri button below and follow the directions provided to get started.</p>
+      <br><center><a href="'.$url.'"><img title="Login with Tuakiri" src="https://rapidconnect.tuakiri.ac.nz/logo.jpg"/></a></center>
       </div>';
 
     $rapid_login_markup = $rapid_login_markup.'<br><br><h2>Login with a local account</h2><br>';
@@ -371,7 +371,7 @@ class Rapid_Connect {
         $jwt = JWT::decode($jws, $secret);
       } catch(Exception $e) {
         error_log ($e);
-        return new WP_Error('rapid_connect_invalid_jws', __('<strong>Error</strong>: The response from AAF Rapid Connect could not be validated.'));
+        return new WP_Error('rapid_connect_invalid_jws', __('<strong>Error</strong>: The response from Tuakiri Rapid Connect could not be validated.'));
       }
 
       $attr = $jwt->{'https://aaf.edu.au/attributes'};
@@ -381,7 +381,7 @@ class Rapid_Connect {
         $affiliations = explode(";", $attr->edupersonscopedaffiliation);
 
         if (count(array_intersect($trusted_affiliations, $affiliations)) < 1) {
-          return new WP_Error('rapid_connect_access_control', __('<strong>Error</strong>: This account is not permitted access via the AAF due to local policy.'));
+          return new WP_Error('rapid_connect_access_control', __('<strong>Error</strong>: This account is not permitted access via Tuakiri due to local policy.'));
         }
       }
 
@@ -394,7 +394,7 @@ class Rapid_Connect {
       } else {
         // Ensure this user is managed by Rapid Connect
         if ( !get_usermeta($user->ID, 'rapid_connect') ) {
-          return new WP_Error('rapid_connect_invalid_login', __('<strong>Error</strong>: This account is not accessed via the AAF.'));
+          return new WP_Error('rapid_connect_invalid_login', __('<strong>Error</strong>: This account is not accessed via Tuakiri.'));
         }
 
         // Ensure personal information is current with source IdP
