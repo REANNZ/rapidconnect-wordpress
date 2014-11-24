@@ -11,7 +11,7 @@ Allows Tuakiri subscribers to rapidly create collaborative Wordpress sites.
 
 Tuakiri allows a service provider to trust the information it receives from another participating institution. This provides seamless access to resources and secure communication by removing most of the roadblocks to collaboration and sharing at both the institutional and end user levels.
 
-The core of Tuakiri is a SAML-based federation using Shibboleth IdP and SP installations. However, in certain situations, this is seen as too heavy a solution. Hence **AAF Rapid Connect** was created with the following benefits:
+The core of Tuakiri is a SAML-based federation using Shibboleth IdP and SP installations. However, in certain situations, this is seen as too heavy a solution. Hence **Rapid Connect** was created with the following benefits:
 
 * There is no need to install a Shibboleth SP on your web server;
 * It natively integrates into commonly used development languages;
@@ -24,13 +24,12 @@ This plugin further eases usage of Rapid Connect by integrating it with Wordpres
 ## Installation
 
 1. Download the latest release of the [Tuakiri Rapid Connect Wordpress plugin](https://github.com/University-of-Auckland/rapidconnect-wordpress/releases)
-
 1. Extract the tar.gz or zip file you downloaded to your `$WORDPRESS/wp-content/plugins/` directory
 1. Activate the Tuakiri Rapid Connect plugin through the 'Plugins' menu in WordPress
 1. Click on the Tuakiri Rapid Connect plugin 'Settings' link and follow the onscreen instructions
 
 ## Help
-To get help with Tuakiri Rapid Connect simply [email Tuakiri support on support@tuakiri.ac.nz](mailto:support@tuakiri.ac.nz?subject=Help with integrating Tuakiri Rapid Connect)
+To get help with Tuakiri Rapid Connect simply [email Tuakiri support on support@tuakiri.ac.nz](mailto:support@tuakiri.ac.nz?subject=Help with integrating Tuakiri Rapid Connect).
 
 ## Credits
 Created by [Bradley Beddoes](http://bradleybeddoes.com) for the [Australian Access Federation](http://www.aaf.edu.au).
