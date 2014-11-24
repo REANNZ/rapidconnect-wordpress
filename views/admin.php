@@ -67,7 +67,7 @@
       $trusted_affiliations_string = implode(' ', $options['trusted_affiliations']);
 
     echo "
-      <p>Administrators of this Wordpress site may wish to further limit access to only a specific subset of Tuakiri enabled identities. You can achieve this by entering a <strong>space seperated</strong> list of eduPersonScopedAffiliation values below.</p>
+      <p>Administrators of this Wordpress site may wish to further limit access to only a specific subset of Tuakiri enabled identities. You can achieve this by entering a <strong>space separated</strong> list of eduPersonScopedAffiliation values below.</p>
       <p>To gain access to your Wordpress site, users logging in from Tuakiri must have at least one of the values you specify associated with their account.</p>
       <input id='url' name='rapid_connect_options[trusted_affiliations]' size='60' type='text' value='{$trusted_affiliations_string}' />
     ";
