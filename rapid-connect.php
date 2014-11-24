@@ -4,13 +4,13 @@
  * @package   Rapid_Connect
  * @author    Bradley Beddoes <bradleybeddoes@aaf.edu.au>
  * @license   GPL-3.0
- * @link      http://rapid.aaf.edu.au
+ * @link      https://rapidconnect.tuakiri.ac.nz/
  * @copyright 2013 Australian Access Federation
  *
  * @wordpress-plugin
- * Plugin Name: AAF Rapid Connect
- * Plugin URI:  http://rapid.aaf.edu.au
- * Description: Allows subscribers of the Australian Access Federation to rapidly create collaborative Wordpress sites.
+ * Plugin Name: Tuakiri Rapid Connect
+ * Plugin URI:  https://rapidconnect.tuakiri.ac.nz/
+ * Description: Allows Tuakiri subscribers to rapidly create collaborative Wordpress sites.
  * Version:     0.1.1
  * Author:      Bradley Beddoes
  * Author URI:  http://www.bradleybeddoes.com
