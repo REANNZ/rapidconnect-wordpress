@@ -342,9 +342,9 @@ class Rapid_Connect {
     $rapid_login_markup='<div class="rapidlogin">
       <h2>Login with Tuakiri</h2>
       <br>
-      <p>If your Organisation is a <a href="https://tuakiri.ac.nz/confluence/display/Tuakiri/Subscriber+List">subscriber to Tuakiri</a> you can seamlessly access this site.</p>
+      <p>If your organisation is a <a href="https://tuakiri.ac.nz/confluence/display/Tuakiri/Subscriber+List">subscriber to Tuakiri</a> you can seamlessly access this site.</p>
       <br>
-      <p>Click on the Tuakiri button below and follow the directions provided to get started.</p>
+      <p>Click on the Tuakiri logo below and follow the directions provided to get started.</p>
       <br><center><a href="'.$url.'"><img title="Login with Tuakiri" src="https://rapidconnect.tuakiri.ac.nz/logo.jpg"/></a></center>
       </div>';
 
