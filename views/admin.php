@@ -23,7 +23,7 @@
             <li>Your <strong>Secret</strong> which you can click below to generate or provide your own secure value for. You MUST keep this secure. Do not share it with 3rd parties.;</li>
           </ol>
     <p>Finally decide if your Wordpress site will be used in a production or test capacity and do the online registration</p>
-    <p><center><strong><a href="https://rapidconnect.tuakiri.ac.nz/registration">Register for Production</a></strong> | <a href="https://rapidconnect.test.tuakiri.ac.nz/registration">Register for Test</a></center></p>
+    <p><center><strong><a href="https://rapidconnect.tuakiri.ac.nz/registration">Register for Production</a></strong> | <a href="https://rapidconnect.staging.tuakiri.ac.nz/registration">Register for Test</a></center></p>
   ';
 } ?>
 
