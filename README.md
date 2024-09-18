@@ -23,13 +23,13 @@ This plugin further eases usage of Rapid Connect by integrating it with Wordpres
 
 ## Installation
 
-1. Download the latest release of the [Tuakiri Rapid Connect Wordpress plugin](https://github.com/University-of-Auckland/rapidconnect-wordpress/releases)
+1. Download the latest release of the [Tuakiri Rapid Connect Wordpress plugin](https://github.com/REANNZ/rapidconnect-wordpress/releases)
 1. Extract the tar.gz or zip file you downloaded to your `$WORDPRESS/wp-content/plugins/` directory
 1. Activate the Tuakiri Rapid Connect plugin through the 'Plugins' menu in WordPress
 1. Click on the Tuakiri Rapid Connect plugin 'Settings' link and follow the onscreen instructions
 
 ## Help
-To get help with Tuakiri Rapid Connect simply [email Tuakiri support on support@tuakiri.ac.nz](mailto:support@tuakiri.ac.nz?subject=Help with integrating Tuakiri Rapid Connect).
+To get help with Tuakiri Rapid Connect simply [email Tuakiri support at tuakiri@reannz.co.nz](mailto:tuakiri@reannz.co.nz?subject=Help%20with%20integrating%20Tuakiri%20Rapid%20Connect).
 
 ## Credits
 Created by [Bradley Beddoes](http://bradleybeddoes.com) for the [Australian Access Federation](http://www.aaf.edu.au).
